@@ -25,7 +25,6 @@ int main() {
     User user(weight, height, age, gender, goal);
 
     Diet diet(user);
-    //diet.print_macros();
 
     // Definindo opções de alimentos para cada refeição
     Meal breakfast;
@@ -72,19 +71,6 @@ int main() {
     dinner.add_fat_option(Food("Avocado", 12, 3, 15, 234));
     dinner.add_fat_option(Food("Cheese", 1, 7, 9, 110));
 
-    // Exibir opções de alimentos para cada refeição
-    /*std::cout << "\nOpções de Café da Manhã:\n";
-    breakfast.print_options();
-
-    std::cout << "\nOpções de Almoço:\n";
-    lunch.print_options();
-
-    std::cout << "\nOpções de Lanche da Tarde:\n";
-    snack.print_options();
-
-    std::cout << "\nOpções de Jantar:\n";
-    dinner.print_options();*/
-    
     diet.suggest_meal_plan(breakfast, lunch, snack, dinner);
 
     return 0;
