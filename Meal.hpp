@@ -13,7 +13,6 @@ public:
     void add_carb_option(Food food);
     void add_protein_option(Food food);
     void add_fat_option(Food food);
-    //void print_options();
     void calculate_food_quantities(double carbs, double proteins, double fats);
 };
 
