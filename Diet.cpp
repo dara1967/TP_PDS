@@ -15,12 +15,6 @@ void Diet::calculate_macros() {
     proteins_grams = proteins_calories / 4; // 1 grama = 4 calorias
     fats_grams = fats_calories / 9; // 1 grama = 9 calorias
 }
-/*void Diet::print_macros() {
-    std::cout << "Necessidade calórica diária: " << daily_calories << " kcal\n";
-    std::cout << "Carboidratos: " << carbs_grams << " g\n";
-    std::cout << "Proteínas: " << proteins_grams << " g\n";
-    std::cout << "Gorduras: " << fats_grams << " g\n";
-}*/
 
 void Diet::suggest_meal(Meal& meal, double carbs, double proteins, double fats) {
     std::cout << "Choose one option from each group:\n";
