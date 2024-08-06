@@ -5,7 +5,7 @@ Diet::Diet(User user) : user(user) {
     daily_calories = user.calculate_daily_calories();
     calculate_macros();
 }
-
+//calcula a quantidade necessária de macronutrientes
 void Diet::calculate_macros() {
     double carbs_calories = daily_calories * 0.50;
     double proteins_calories = daily_calories * 0.25;
@@ -17,53 +17,53 @@ void Diet::calculate_macros() {
 }
 
 void Diet::suggest_meal(Meal& meal, double carbs, double proteins, double fats) {
-    std::cout << "Choose one option from each group:\n";
+    std::cout << "Escolha apenas uma opção de cada grupo:\n";
 
-    std::cout << "\nCarbohydrate options:\n";
+    std::cout << "\nOpções de Carboidratos:\n";
     for (const auto& food : meal.carbs_options) {
         double quantity = (carbs / food.carbs) * 100;
-        std::cout << "- " << food.name << ": " << quantity << " grams\n";
+        std::cout << "- " << food.name << ": " << quantity << " gramas\n";
     }
 
-    std::cout << "\nProtein options:\n";
+    std::cout << "\nOpções de Proteínas:\n";
     for (const auto& food : meal.proteins_options) {
         double quantity = (proteins / food.proteins) * 100;
-        std::cout << "- " << food.name << ": " << quantity << " grams\n";
+        std::cout << "- " << food.name << ": " << quantity << " gramas\n";
     }
 
-    std::cout << "\nFat options:\n";
+    std::cout << "\nOpções de Gorduras:\n";
     for (const auto& food : meal.fats_options) {
         double quantity = (fats / food.fats) * 100;
-        std::cout << "- " << food.name << ": " << quantity << " grams\n";
+        std::cout << "- " << food.name << ": " << quantity << " gramas\n";
     }
 }
-
+//divide calorias diárias por refeição e sugere opções de refeições
 void Diet::suggest_meal_plan(Meal& breakfast, Meal& lunch, Meal& snack, Meal& dinner) {
-    double breakfastCarbs = carbs_grams * 0.25;
-    double breakfastProteins = proteins_grams * 0.25;
-    double breakfastFats = fats_grams * 0.25;
+    double breakfast_carbs = carbs_grams * 0.25;
+    double breakfast_proteins = proteins_grams * 0.25;
+    double breakfast_fats = fats_grams * 0.25;
 
-    double lunchCarbs = carbs_grams * 0.35;
-    double lunchProteins = proteins_grams * 0.35;
-    double lunchFats = fats_grams * 0.35;
+    double lunch_carbs = carbs_grams * 0.35;
+    double lunch_proteins = proteins_grams * 0.35;
+    double lunch_fats = fats_grams * 0.35;
 
-    double snackCarbs = carbs_grams * 0.15;
-    double snackProteins = proteins_grams * 0.15;
-    double snackFats = fats_grams * 0.15;
+    double snack_carbs = carbs_grams * 0.15;
+    double snack_proteins = proteins_grams * 0.15;
+    double snack_fats = fats_grams * 0.15;
 
-    double dinnerCarbs = carbs_grams * 0.25;
-    double dinnerProteins = proteins_grams * 0.25;
-    double dinnerFats = fats_grams * 0.25;
+    double dinner_carbs = carbs_grams * 0.25;
+    double dinner_proteins = proteins_grams * 0.25;
+    double dinner_fats = fats_grams * 0.25;
 
-    std::cout << "\nBreakfast:\n";
-    suggest_meal(breakfast, breakfastCarbs, breakfastProteins, breakfastFats);
+    std::cout << "\nCafé da Manhã:\n";
+    suggest_meal(breakfast, breakfast_carbs, breakfast_proteins, breakfast_fats);
 
-    std::cout << "\nLunch:\n";
-    suggest_meal(lunch, lunchCarbs, lunchProteins, lunchFats);
+    std::cout << "\nAlmoço:\n";
+    suggest_meal(lunch, lunch_carbs, lunch_proteins, lunch_fats);
 
-    std::cout << "\nSnack:\n";
-    suggest_meal(snack, snackCarbs, snackProteins, snackFats);
+    std::cout << "\nLanche da Tarde:\n";
+    suggest_meal(snack, snack_carbs, snack_proteins, snack_fats);
 
-    std::cout << "\nDinner:\n";
-    suggest_meal(dinner, dinnerCarbs, dinnerProteins, dinnerFats);
+    std::cout << "\nJantar:\n";
+    suggest_meal(dinner, dinner_carbs, dinner_proteins, dinner_fats);
 }
